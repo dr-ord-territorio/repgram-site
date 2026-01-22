@@ -1,0 +1,164 @@
+
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>REPGRAM – Acesso aos Serviços GNSS</title>
+
+  <style>
+    :root {
+      --bg: #000000;
+      --panel: #0b0b0b;
+      --border: #1a1a1a;
+      --text: #ffffff;
+      --muted: #b5b5b5;
+      --link: #6db8ff;
+      --link-hover: #a9d7ff;
+      --accent: #e0e0e0;
+      --maxw: 820px;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 48px 20px 64px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0));
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 32px;
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: 1.75rem;
+      letter-spacing: .3px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin: 28px 0 10px;
+      color: var(--accent);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+    }
+
+    p {
+      margin: 8px 0 12px;
+      color: var(--accent);
+    }
+
+    ul {
+      margin: 10px 0 18px 18px;
+      padding: 0;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    code {
+      background: #111;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-size: 0.95em;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="card">
+      <h1>REPGRAM</h1>
+      <div class="subtitle">
+        Acesso aos Serviços GNSS – Informação ao Utilizador
+      </div>
+
+      <p>
+        No âmbito da reestruturação da REPGRAM, o acesso aos serviços GNSS passou a ser efetuado
+        através de nova conta de utilizador.
+      </p>
+
+      <h2>Registo</h2>
+      <p>
+        O registo deve ser efetuado em:
+        <br>
+        <a href="https://repgram.madeira.gov.pt/" target="_blank">
+          https://repgram.madeira.gov.pt/
+        </a>
+      </p>
+
+      <h2>Dados de Ligação</h2>
+      <ul>
+        <li><strong>Endereço IP:</strong> <code>193.126.59.41</code></li>
+        <li><strong>Rede RTK:</strong> porto <code>9103</code></li>
+        <li><strong>Mais Próximo:</strong> porto <code>9102</code></li>
+        <li><strong>Estação Manual:</strong> porto <code>9101</code></li>
+      </ul>
+
+
+      <footer>
+        <span>Em caso de necessidade, contacte a DROTe, drote@madeira.gov.pt.</span>
+        <span class="updated">Atualizado: <time id="last-updated" datetime=""></time></span>
+      </footer>
+    </div>
+  </main>
+
+  <!-- Data de atualização automática (com base em document.lastModified) -->
+  <script>
+    (function() {
+      try {
+        const el = document.getElementById('last-updated');
+        const d = new Date(document.lastModified);
+        // Formato pt-PT: 19 de janeiro de 2026, 10:42
+        const fmt = new Intl.DateTimeFormat('pt-PT', {
+          day: '2-digit', month: 'long', year: 'numeric',
+          hour: '2-digit', minute: '2-digit'
+        });
+        el.textContent = fmt.format(d);
+        // atributo datetime em ISO
+        el.setAttribute('datetime', d.toISOString());
+      } catch (e) {
+        // fallback simples
+        document.getElementById('last-updated').textContent = '';
+      }
+    })();
+  </script>
+</body>
+</html>
+
